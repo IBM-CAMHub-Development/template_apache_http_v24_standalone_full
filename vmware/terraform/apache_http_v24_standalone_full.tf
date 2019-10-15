@@ -536,7 +536,7 @@ variable "HTTPNode01_root_disk_size" {
 }
 
 module "provision_proxy" {
-  source 						= "git::https://github.com/IBM-CAMHub-Open/terraform-modules.git?ref=1.0//vmware/proxy"
+  source 						= "git::https://github.com/IBM-CAMHub-Development/terraform-modules.git?ref=1.0//vmware/proxy"
   ip                  = "${var.HTTPNode01_ipv4_address}"
   id									= "${vsphere_virtual_machine.HTTPNode01.id}"
   ssh_user            = "${var.HTTPNode01-os_admin_user}"
@@ -871,7 +871,6 @@ resource "camc_softwaredeploy" "HTTPNode01_httpd24-ssl-vhosts" {
 }
 EOT
 }
-
 #########################################################
 ##### Resource : VaultItem
 #########################################################
